@@ -1,0 +1,11 @@
+.auth {
+  grid-column: 1/-1;
+  width: 100svw;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: theme('colors.blue.950');
+}

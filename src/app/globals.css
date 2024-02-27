@@ -1,33 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --body-bg: #f6f7f9;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: theme('colors.dark.500');
+  font-family: theme('fontFamily.poppins');
+  background-color: var(--body-bg);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.mainwrapper {
+  grid-column: 1/-1;
+  height: calc(100svh - 128px);
+  overflow-y: auto;
+
+  @media (width > 540.01px) {
+    grid-column: 3/-1;
+    height: calc(100svh - 100px);
   }
+  @media (width < 300px) {
+    height: calc(100svh - 102px);
+    padding: 10px;
+  }
+}
+
+/* Global Styles */
+.wrapper {
+  container-name: wrapper;
+  container-type: inline-size;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.img-container {
+  position: relative;
 }

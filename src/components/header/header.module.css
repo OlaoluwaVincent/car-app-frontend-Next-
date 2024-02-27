@@ -1,0 +1,26 @@
+.bg {
+  background-color: theme('colors.white');
+  grid-column: 1/-1;
+}
+
+.header {
+  height: 100px;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 540px) {
+  .header {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    padding: 40px;
+    gap: 40px;
+    font-size: 14px;
+  }
+}

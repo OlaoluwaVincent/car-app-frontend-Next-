@@ -1,0 +1,113 @@
+.login {
+  container-name: form;
+  container-type: inline-size;
+  background-color: theme('colors.blue.700');
+  color: theme('colors.white');
+  padding-block: 40px;
+  width: 620px;
+  @apply space-y-10;
+
+  @media (width < 768px) {
+    width: 400px;
+    @apply space-y-5;
+
+    .input {
+      height: 30px;
+    }
+    .label {
+      font-size: 16px;
+      letter-spacing: 1.6px;
+    }
+    .loginbtn {
+      padding-block: 10px;
+    }
+  }
+  @media (width <= 430px) {
+    width: 300px;
+    @apply space-y-5;
+
+    .formGroup {
+      gap: 4px;
+    }
+
+    .input {
+      height: 30px;
+    }
+    .label {
+      font-size: 12px;
+      letter-spacing: 1.6px;
+    }
+    .loginbtn {
+      padding-block: 10px;
+    }
+  }
+
+  @media (width <= 320px) {
+    width: 250px;
+    @apply space-y-3;
+
+    .input {
+      height: 24px;
+    }
+    .label {
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    .loginbtn {
+      padding-block: 6px;
+    }
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+  margin-inline: auto;
+}
+
+.input {
+  height: 50px;
+  color: theme('colors.blue.900');
+  outline-color: theme('colors.blue.900');
+  padding-left: 10px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2.2px;
+}
+
+.loginbtn {
+  width: 100%;
+  border: none;
+  padding-block: 20px;
+  background-color: theme('colors.blue.800');
+  transition: all ease-in 400ms linear;
+  font-weight: 500;
+  font-size: 18px;
+  &:hover {
+    background-color: theme('colors.blue.950');
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+.redirect {
+  display: block;
+  font-size: 12px;
+  margin-top: 20px;
+
+  & > b {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 2px;
+  }
+  @media (width > 539px) {
+    font-size: 17px;
+  }
+}

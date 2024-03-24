@@ -9,8 +9,10 @@ const Header_Details = () => {
   return (
     <div className={`${styles['header--details']}`}>
       <FaHeart className={`${styles['header--details__icon']}`} />
+      {/* 
+      <div className={styles.svg} data-attr='5'> */}
 
-      <div className={styles.svg} data-attr='5'>
+      <div className={styles.svg}>
         <FaBell className={`${styles['header--details__icon']}`} />
       </div>
 

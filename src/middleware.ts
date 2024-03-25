@@ -1,11 +1,3 @@
-import { NextRequest, NextResponse } from 'next/server';
+export { default } from 'next-auth/middleware';
 
-const protectedRoutes: string[] = ['/'];
-const session = false;
-
-export default function middleware(req: NextRequest) {
-  if (!session && protectedRoutes.includes(req.nextUrl.pathname)) {
-    const absoluteUrl = new URL('/login', req.nextUrl.origin);
-    return NextResponse.redirect(absoluteUrl.toString());
-  }
-}
+export const config = { matcher: ['/dashboard'] };

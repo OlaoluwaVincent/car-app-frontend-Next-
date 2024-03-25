@@ -6,20 +6,21 @@ import { useFormStatus } from 'react-dom';
 // This component will make use of FormStatus
 
 type Props = {};
-const Login = (props: Props) => {
+const Login = () => {
   const { pending } = useFormStatus();
   return (
     <section className={styles.login}>
       <div className={styles.formGroup}>
-        <label htmlFor='username' className={styles.label}>
+        <label htmlFor='email' className={styles.label}>
           Email
         </label>
         <input
           placeholder='Email@email.com'
+          required
           type='text'
-          name='username'
+          name='email'
           className={styles.input}
-          autoComplete='username'
+          autoComplete='email'
         />
       </div>
       <div className={styles.formGroup}>
@@ -28,6 +29,7 @@ const Login = (props: Props) => {
         </label>
         <input
           placeholder='Enter Password'
+          required
           type='password'
           name='password'
           className={styles.input}

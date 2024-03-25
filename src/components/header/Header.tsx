@@ -6,7 +6,7 @@ import Mobile_Header from './Mobile_Header';
 import React from 'react';
 
 type Props = {};
-const header = (props: Props) => {
+const header = async (props: Props) => {
   return (
     <header className={`${styles.bg}`}>
       <React.Fragment>

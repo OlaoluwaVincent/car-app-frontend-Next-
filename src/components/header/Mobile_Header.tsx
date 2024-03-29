@@ -9,10 +9,14 @@ import Logo from '../logo/Logo';
 import { useState } from 'react';
 import { SIDEBAR_MENU } from '@/utils/helperVariables';
 import SidebarLink from '../sidebar link/SidebarLink';
+import { GoSignOut } from 'react-icons/go';
+import { signOut } from 'next-auth/react';
+import { getClientSideSession } from '@/utils/SessionProvider';
 
 type Props = {};
 const Mobile_Header = (props: Props) => {
   const [showSideBar, setshowSideBar] = useState(true);
+  const { userSession } = getClientSideSession();
   return (
     <>
       <div className={styles.header}>
@@ -38,6 +42,17 @@ const Mobile_Header = (props: Props) => {
           {SIDEBAR_MENU.map((menu) => (
             <SidebarLink key={menu.id} menu={menu} />
           ))}
+          {userSession?.sub && (
+            <button
+              onClick={() => signOut()}
+              className='flex bg-yellow-700 text-white hover:bg-yellow-900 py-2'
+            >
+              <span className='mr-2'>
+                <GoSignOut size={30} />
+              </span>
+              SignOut
+            </button>
+          )}
         </div>
       )}
     </>

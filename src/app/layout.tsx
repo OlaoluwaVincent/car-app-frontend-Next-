@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import AuthProvider from '@/utils/SessionProvider';
+import Header from '@/components/header/Header';
+import ReactQueryProvider from '@/utils/ReactQueryProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +16,19 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <ReactQueryProvider>
+          <LayoutContent children={children} />
+        </ReactQueryProvider>
       </body>
     </html>
   );
 }
+
+const LayoutContent = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className='wrapper'>
+      <Header />
+      <main className='mainwrapper'>{children}</main>
+    </div>
+  );
+};

@@ -1,4 +1,4 @@
-import { GoHomeFill } from 'react-icons/go';
+import { GoHomeFill, GoSignOut } from 'react-icons/go';
 import { FaCar } from 'react-icons/fa';
 import { IoBarChart } from 'react-icons/io5';
 import { IoWalletOutline } from 'react-icons/io5';
@@ -51,4 +51,10 @@ export const SIDEBAR_MENU: SidebarMenuItem[] = [
     link: '/calendar',
     icon: <BsCalendar2Month size={iconSize} />,
   },
+  // {
+  //   id: Math.random(),
+  //   name: 'Logout',
+  //   link: '/logout',
+  //   icon: <GoSignOut size={iconSize} />,
+  // },
 ];

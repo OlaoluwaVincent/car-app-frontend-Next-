@@ -16,7 +16,7 @@ const Loginwrapper = (props: Props) => {
     if (session && session.data?.user) {
       router.replace('/dashboard');
     }
-  }, [session?.data]);
+  }, [session]);
 
   async function LOGIN(prevState: any, data: FormData) {
     const email = data.get('email');
@@ -26,7 +26,7 @@ const Loginwrapper = (props: Props) => {
       redirect: false,
       email,
       password,
-      callbackUrl: 'http://localhost:3000/dashboard',
+      callbackUrl: 'http://localhost:3000/',
     });
     //Handle Login with API
 
@@ -36,7 +36,7 @@ const Loginwrapper = (props: Props) => {
 
     if (res?.ok) {
       if (session.data?.user) {
-        router.replace('/dashboard');
+        router.replace('/');
       }
     }
   }

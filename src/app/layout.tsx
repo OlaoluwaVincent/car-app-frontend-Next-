@@ -25,10 +25,5 @@ export default async function RootLayout({
 }
 
 const LayoutContent = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className='wrapper'>
-      <Header />
-      <main className='mainwrapper'>{children}</main>
-    </div>
-  );
+  return <>{children}</>;
 };

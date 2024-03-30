@@ -2,21 +2,23 @@
 
 import { useFormState } from 'react-dom';
 import Login from './login';
-import { signIn, useSession } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useLayoutEffect } from 'react';
+import { getClientSideSession } from '@/utils/SessionProvider';
 
 type Props = {};
 const Loginwrapper = (props: Props) => {
   const [state, formAction] = useFormState(LOGIN, undefined);
   const router = useRouter();
-  const session = useSession();
+
+  const { userSession } = getClientSideSession();
 
   useLayoutEffect(() => {
-    if (session && session.data?.user) {
-      router.replace('/dashboard');
+    if (userSession?.sub) {
+      router.back();
     }
-  }, [session]);
+  }, [userSession]);
 
   async function LOGIN(prevState: any, data: FormData) {
     const email = data.get('email');
@@ -35,20 +37,13 @@ const Loginwrapper = (props: Props) => {
     }
 
     if (res?.ok) {
-      if (session.data?.user) {
-        router.replace('/');
-      }
+      router.replace('/');
     }
   }
 
   return (
     <form action={formAction}>
-      {state && state.error && (
-        <p className='text-white uppercase text-center text-lg font-bold'>
-          {state.message}
-        </p>
-      )}
-      <Login />
+      <Login respState={state} />
     </form>
   );
 };

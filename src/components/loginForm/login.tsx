@@ -3,13 +3,20 @@
 import Link from 'next/link';
 import styles from './login.module.css';
 import { useFormStatus } from 'react-dom';
-// This component will make use of FormStatus
+import { useSearchParams } from 'next/navigation';
 
-type Props = {};
-const Login = () => {
+const Login = ({ respState }: { respState: any }) => {
+  const searchParams = useSearchParams();
+  const email = searchParams.get('email');
+
   const { pending } = useFormStatus();
   return (
     <section className={styles.login}>
+      {respState && (
+        <p className='text-white text-center first-letter:uppercase drop-shadow-sm'>
+          {respState?.message}
+        </p>
+      )}
       <div className={styles.formGroup}>
         <label htmlFor='email' className={styles.label}>
           Email
@@ -19,6 +26,7 @@ const Login = () => {
           required
           type='text'
           name='email'
+          value={email ?? undefined}
           className={styles.input}
           autoComplete='email'
         />

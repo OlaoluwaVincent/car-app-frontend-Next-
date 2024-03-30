@@ -13,3 +13,12 @@ export type UserData = {
   user: UserAuth;
   expires: string;
 };
+
+export type LoggedUser = {
+  id: string;
+  email: string;
+  name: string;
+  role: string;
+  profileImg: string;
+  billingId: null;
+};

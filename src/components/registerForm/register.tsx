@@ -4,55 +4,33 @@ import Link from 'next/link';
 import styles from './register.module.css';
 import { useFormStatus } from 'react-dom';
 
-type Props = {};
-const Register = (props: Props) => {
+type Props = {
+  respState: any;
+};
+const Register = ({ respState }: Props) => {
   const { pending } = useFormStatus();
   return (
     <section className={styles.register}>
-      {/* FIRST AND LAST NAME COMMENTED OUT FOR NOW */}
-      {/* <div
-        className={
-          ' flex flex-col mx-auto sm:flex-row items-center gap-5 w-full sm:w-[80%]'
-        }
-      >
-        <div className={styles.formGroup}>
-          <label htmlFor='firstname' className={styles.label}>
-            First Name
-          </label>
-          <input
-            placeholder='Enter First Name'
-            type='text'
-            name='firstname'
-            className={styles.input}
-          />
-        </div>
-
-        <div className={styles.formGroup}>
-          <label htmlFor='lastname' className={styles.label}>
-            Last Name
-          </label>
-          <input
-            placeholder='Enter Last Name'
-            type='text'
-            name='lastname'
-            className={styles.input}
-          />
-        </div>
-      </div> */}
+      {respState && (
+        <p className='text-white text-center first-letter:uppercase drop-shadow-sm'>
+          {respState?.message}
+        </p>
+      )}
       <div
         className={
           ' flex flex-col mx-auto sm:flex-row items-center gap-5 w-full sm:w-[80%]'
         }
       >
         <div className={styles.formGroup}>
-          <label htmlFor='username' className={styles.label}>
-            UserName
+          <label htmlFor='fullName' className={styles.label}>
+            Full Name
           </label>
           <input
-            placeholder='Choose UserName'
+            placeholder='Enter Full Name'
+            required
             type='text'
-            name='username'
-            autoComplete='username'
+            name='fullName'
+            autoComplete='full name'
             className={styles.input}
           />
         </div>
@@ -63,8 +41,9 @@ const Register = (props: Props) => {
           </label>
           <input
             placeholder='Email@email.com'
+            required
             autoComplete='email'
-            type='text'
+            type='email'
             name='email'
             className={styles.input}
           />
@@ -82,6 +61,7 @@ const Register = (props: Props) => {
           </label>
           <input
             placeholder='Enter Password'
+            required
             type='password'
             name='password'
             className={styles.input}
@@ -94,11 +74,18 @@ const Register = (props: Props) => {
           </label>
           <input
             placeholder='Confirm Password'
+            required
             type='password'
             name='cpassword'
             className={styles.input}
           />
         </div>
+      </div>
+      <div className='text-center'>
+        <input type='checkbox' name='role' />{' '}
+        <label htmlFor='role'>
+          If you Rent cars instead of Hire please check this box
+        </label>
       </div>
 
       <div className={styles.formGroup}>

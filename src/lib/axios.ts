@@ -1,10 +1,8 @@
 import { getServerSideSession } from '@/utils/session';
-import { LoggedUser } from '@/utils/typings';
 import axios from 'axios';
-import { Register } from './action';
 
 export const axiosInstance = axios.create({
-  baseURL: 'http://localhost:9000/api/',
+  baseURL: process.env.NEXT_PUBLIC_SERVER_URL,
 });
 
 const setAuthorizationHeader = (token: string | null | undefined) => {

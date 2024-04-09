@@ -1,4 +1,4 @@
-import { getUserDetail } from '@/lib/axios_callls';
+import { getUserDetail } from '@/lib/queries';
 import { getServerSideSession } from '@/utils/session';
 
 type Props = {};

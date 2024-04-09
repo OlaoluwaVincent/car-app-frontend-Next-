@@ -6,7 +6,7 @@ import { BiMessageSquareDetail } from 'react-icons/bi';
 import { BsCalendar2Month } from 'react-icons/bs';
 
 export interface SidebarMenuItem {
-  id: number;
+  id: string;
   name: string;
   link: string;
   icon: JSX.Element;
@@ -16,41 +16,41 @@ const iconSize = 30;
 
 export const SIDEBAR_MENU: SidebarMenuItem[] = [
   {
-    id: Math.random(),
+    id: 'dashboard',
     name: 'Dashboard',
     link: '/dashboard',
     icon: <GoHomeFill size={iconSize} />,
   },
   {
-    id: Math.random(),
+    id: 'cars',
     name: 'Car',
-    link: '/rented-car',
+    link: '/cars',
     icon: <FaCar size={iconSize} />,
   },
+  // {
+  //   id: "insight",
+  //   name: 'Insight',
+  //   link: '/insight',
+  //   icon: <IoBarChart size={iconSize} />,
+  // },
   {
-    id: Math.random(),
-    name: 'Insight',
-    link: '/insight',
-    icon: <IoBarChart size={iconSize} />,
-  },
-  {
-    id: Math.random(),
+    id: 'reimburse',
     name: 'Reimburse',
     link: '/reimburse',
     icon: <IoWalletOutline size={iconSize} />,
   },
   {
-    id: Math.random(),
+    id: 'inbox',
     name: 'Inbox',
     link: '/inbox',
     icon: <BiMessageSquareDetail size={iconSize} />,
   },
-  {
-    id: Math.random(),
-    name: 'Calendar',
-    link: '/calendar',
-    icon: <BsCalendar2Month size={iconSize} />,
-  },
+  // {
+  //   id: 'calendar',
+  //   name: 'Calendar',
+  //   link: '/calendar',
+  //   icon: <BsCalendar2Month size={iconSize} />,
+  // },
   // {
   //   id: Math.random(),
   //   name: 'Logout',

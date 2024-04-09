@@ -22,3 +22,39 @@ export type LoggedUser = {
   profileImg: string;
   billingId: null;
 };
+
+export type CarsID = {
+  result: { id: string }[];
+};
+
+export type Cars = {
+  data: CarsID;
+  status: number;
+  statusText: string;
+};
+
+export interface CarCredentials {
+  id: string;
+  name: string;
+  carType: string;
+  steering: string;
+  capacity: string;
+  gasoline: string;
+  amount: string;
+  description: string;
+  rented: boolean;
+  tag: string;
+  tagDescription: string;
+  region: string;
+  state: string;
+  ownerId: string;
+  carImageId: string;
+  carImage: {
+    id: string;
+  };
+}
+
+export type CarImageType = {
+  url: string;
+  public_id: string;
+}[];

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Header from '@/components/header/Header';
 import ReactQueryProvider from '@/utils/ReactQueryProvider';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,6 +18,7 @@ export default async function RootLayout({
       <body>
         <ReactQueryProvider>
           <LayoutContent children={children} />
+          <ReactQueryDevtools initialIsOpen={false} />
         </ReactQueryProvider>
       </body>
     </html>

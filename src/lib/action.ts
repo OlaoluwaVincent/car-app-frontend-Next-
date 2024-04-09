@@ -1,6 +1,6 @@
 'use server';
 
-import { registerUser } from './axios_callls';
+import { registerUser } from './queries';
 
 // export async function LOGIN(prevState: any, data: FormData) {
 //   const email = data.get('email');

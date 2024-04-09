@@ -84,7 +84,7 @@ const Register = ({ respState }: Props) => {
       <div className='text-center'>
         <input type='checkbox' name='role' />{' '}
         <label htmlFor='role'>
-          If you Rent cars instead of Hire please check this box
+          If you Rent Out cars, please check this box
         </label>
       </div>
 

@@ -10,6 +10,7 @@ import { HiUsers } from 'react-icons/hi2';
 import Link from 'next/link';
 import CarImage from './CarImage';
 import LikeImage from './LikeImage';
+import styles from './cars.module.css';
 
 type Props = {
   id: string;
@@ -27,17 +28,17 @@ const Car = (props: Props) => {
   return (
     <>
       {data && (
-        <article className='p-4 md:p-6 shadow-mild flex flex-col gap-5 w-full base:w-[350px] md:w-[300px] rounded-lg bg-white'>
+        <article
+          className={
+            `p-4 shadow-mild flex flex-col gap-5 rounded-lg bg-white ` +
+            styles.car_container
+          }
+        >
           {/* Header */}
           <div className='flex items-start justify-between'>
             <div className='space-y-2'>
-              <Link
-                href={`products/rent/${data.id}`}
-                className='text-xl font-bold text-black-500'
-              >
-                {data.name}
-              </Link>
-              <p title='car name' className='text-sm text-black-300'>
+              <h2 className='text-xl font-bold text-black-500'>{data.name}</h2>
+              <p title='car name' className='text-sm text-black-300 uppercase'>
                 {data.carType}
               </p>
             </div>
@@ -64,7 +65,7 @@ const Car = (props: Props) => {
               <aside className='flex gap-2 md:gap-1 items-center'>
                 <HiUsers size='24' className='fill-black-400' />
                 <p className='text-black-400 text-xs md:text-sm '>
-                  {data.capacity} User
+                  {data.capacity}
                 </p>
               </aside>
             </div>
@@ -75,9 +76,12 @@ const Car = (props: Props) => {
               ${data.amount} <span className='font-normal'>/ Day</span>
             </aside>
             <aside>
-              <button className='px-5 py-2 bg-darkblue-600 hover:bg-info-500 rounded-[4px] text-white tracking-wider '>
+              <Link
+                href={'cars/' + data.id}
+                className='px-5 py-2 bg-darkblue-600 hover:bg-info-500 rounded-[4px] text-white tracking-wider'
+              >
                 Rent Now
-              </button>
+              </Link>
             </aside>
           </div>
         </article>

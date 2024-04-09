@@ -1,9 +1,7 @@
-import { GoHomeFill, GoSignOut } from 'react-icons/go';
+import { GoHomeFill } from 'react-icons/go';
 import { FaCar } from 'react-icons/fa';
-import { IoBarChart } from 'react-icons/io5';
 import { IoWalletOutline } from 'react-icons/io5';
 import { BiMessageSquareDetail } from 'react-icons/bi';
-import { BsCalendar2Month } from 'react-icons/bs';
 
 export interface SidebarMenuItem {
   id: string;

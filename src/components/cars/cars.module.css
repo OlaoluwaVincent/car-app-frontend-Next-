@@ -1,8 +1,38 @@
-/* .container {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- height: inherit;
- width: inherit;
-} */
+.container {
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-template-rows: auto;
+ gap: 20px 12px;
+ width: 87%;
+ margin-inline: auto;
+ padding: 20px;
+
+ @media screen and (width >=768px) {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  margin: 0;
+  width: 100%;
+ }
+
+
+ @media screen and (width >=1024px) {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+ }
+
+ @media screen and (width >=1200px) {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+ }
+}
+
+.car_container {
+ width: 95%;
+}
+
+/* 320
+375
+425
+768
+1024
+1200 */

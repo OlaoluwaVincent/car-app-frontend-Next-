@@ -7,6 +7,7 @@ import {
 import { Register } from './action';
 import { axiosInstance, getToken } from './axios';
 
+//* AUTH
 export async function registerUser(data: Register) {
   try {
     const response = await axiosInstance.post('auth/register', data);
@@ -24,6 +25,7 @@ export async function registerUser(data: Register) {
   }
 }
 
+//* USERS
 export async function getUserDetail(id: string | null | undefined) {
   try {
     await getToken();
@@ -37,19 +39,20 @@ export async function getUserDetail(id: string | null | undefined) {
   }
 }
 
-export async function getUserNotification(id: string | null | undefined) {
-  if (typeof id !== 'string') {
-    throw new Error('Please Provide ID');
-  }
+export async function getUserNotifications(): Promise<
+  | {
+      id: string;
+      notificationClip: string;
+    }[]
+  | null
+> {
   try {
     await getToken();
-    const userData: { data: { user: LoggedUser } } = await axiosInstance.get(
-      'user/' + id
-    );
-    return userData.data.user;
+    const userData = await axiosInstance.get('user/notifications');
+    return userData.data.result;
   } catch (error) {
     console.log(error);
-    throw error;
+    return null;
   }
 }
 

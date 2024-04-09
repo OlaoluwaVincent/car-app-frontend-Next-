@@ -11,7 +11,8 @@ type Props = {
 
 const SidebarLink = ({ menu }: Props) => {
   const pathname = usePathname();
-  const isActive = (path: string) => path === pathname;
+  const isActive = (path: string) => pathname.includes(path);
+
   return (
     <Link key={menu.id} href={menu.link}>
       <ul className={styles.listitems}>

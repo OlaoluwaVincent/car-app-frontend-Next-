@@ -57,5 +57,6 @@
     width: 36px;
     position: relative;
     border-radius: 100%;
+    overflow: hidden;
   }
 }

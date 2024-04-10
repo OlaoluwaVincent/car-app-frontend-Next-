@@ -6,6 +6,7 @@ import { IoSettingsSharp } from 'react-icons/io5';
 import styles from './header_details.module.css';
 import { getUserNotifications } from '@/lib/queries';
 import { useQuery } from '@tanstack/react-query';
+import { Avatar, AvatarImage, AvatarFallback } from '@radix-ui/react-avatar';
 
 const Header_Details = () => {
   const { data: notifications } = useQuery({
@@ -29,9 +30,14 @@ const Header_Details = () => {
       </div>
 
       <IoSettingsSharp className={`${styles['header--details__icon']}`} />
-      <div className={`${styles['header--details__profile']} img-container`}>
+      {/* <div className={`${styles['header--details__profile']} img-container`}>
         <Image src={'/profile-image.png'} alt='App Logo' fill />
-      </div>
+      </div> */}
+
+      <Avatar className={`${styles['header--details__profile']} img-container`}>
+        <AvatarImage src='https://github.com/shadcn.png ' />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
     </div>
   );
 };

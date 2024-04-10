@@ -49,7 +49,7 @@ const Car = (props: Props) => {
             {/* Image */}
             <CarImage id={data.carImage.id} />
             {/* Desc */}
-            <div className='flex flex-col md:flex-row md:items-center gap-2'>
+            <div className='flex flex-col md:flex-row md:items-center gap-2 w-full justify-between'>
               <aside className='flex gap-2 md:gap-1 items-center'>
                 <BiSolidGasPump size='24' className='fill-black-400' />
                 <p className='text-black-400 text-xs md:text-sm '>
@@ -80,7 +80,7 @@ const Car = (props: Props) => {
                 href={'cars/' + data.id}
                 className='px-5 py-2 bg-darkblue-600 hover:bg-info-500 rounded-[4px] text-white tracking-wider'
               >
-                Rent Now
+                Rent
               </Link>
             </aside>
           </div>

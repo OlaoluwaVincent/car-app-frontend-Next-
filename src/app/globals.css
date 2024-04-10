@@ -32,6 +32,7 @@ body {
     grid-column: 3/-1;
     height: calc(100svh - 100px);
   }
+
   @media (width < 300px) {
     height: calc(100svh - 102px);
     padding: 10px;

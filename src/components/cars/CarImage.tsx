@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
-import { fetchImageID } from '@/lib/queries';
+import { fetchCarImageID } from '@/lib/queries';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
@@ -8,7 +8,7 @@ type Props = { id: string };
 const CarImage = (props: Props) => {
   const { isLoading, data } = useQuery({
     queryKey: ['car/image', props.id],
-    queryFn: () => fetchImageID(props.id),
+    queryFn: () => fetchCarImageID(props.id),
   });
 
   if (isLoading) {

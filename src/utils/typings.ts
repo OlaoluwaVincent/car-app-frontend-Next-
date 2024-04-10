@@ -7,6 +7,7 @@ export type UserAuth = {
   iat?: number | null;
   exp?: number | null;
   jti?: string | null;
+  image?: string | null;
 };
 
 export type UserData = {

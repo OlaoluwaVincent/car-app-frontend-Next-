@@ -41,6 +41,7 @@ export const authOptions: NextAuthOptions = {
           }
           return null;
         } catch (error: any) {
+          console.log(error.response.data);
           throw new Error(JSON.stringify(error.response.data));
         }
       },
@@ -59,8 +60,15 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       const u = user as UserResponse;
+
       if (user) {
-        token = { ...token, accessToken: u.token, role: u.role };
+        token = {
+          ...token,
+          accessToken: u.token,
+          role: u.role,
+          image: u.profileImg,
+          billingId: u.billingId,
+        };
       }
       return token;
     },

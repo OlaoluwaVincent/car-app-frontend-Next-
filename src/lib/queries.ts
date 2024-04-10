@@ -56,6 +56,7 @@ export async function getUserNotifications(): Promise<
   }
 }
 
+// * CARS
 export async function fetchCars(): Promise<{ id: string }[]> {
   try {
     const cars = await axiosInstance.get('cars');
@@ -78,7 +79,7 @@ export async function fetchCarID(id: string): Promise<CarCredentials> {
   }
 }
 
-export async function fetchImageID(id: string): Promise<CarImageType> {
+export async function fetchCarImageID(id: string): Promise<CarImageType> {
   try {
     const cars = await axiosInstance.get('cars/images/' + id);
 

@@ -3,6 +3,7 @@ import {
   CarImageType,
   Cars,
   LoggedUser,
+  Notifications,
 } from '@/utils/typings';
 import { Register } from './action';
 import { axiosInstance, getToken } from './axios';
@@ -39,13 +40,7 @@ export async function getUserDetail(id: string | null | undefined) {
   }
 }
 
-export async function getUserNotifications(): Promise<
-  | {
-      id: string;
-      notificationClip: string;
-    }[]
-  | null
-> {
+export async function getUserNotifications(): Promise<Notifications> {
   try {
     await getToken();
     const userData = await axiosInstance.get('user/notifications');

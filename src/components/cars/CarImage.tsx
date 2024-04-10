@@ -30,7 +30,7 @@ const CarImage = (props: Props) => {
             alt={'Product Image'}
             height={500}
             width={500}
-            className='mx-auto md:object-cover bg-cover object-center bg-center md:w-[200px] md:h-[150px] w-[100px] h-[100px] object-fill'
+            className='mx-auto md:object-cover bg-cover object-center bg-center md:w-[300px] md:h-[150px] w-[150px] h-[150px] object-fill flex-shrink-0'
           />
           <div className='absolute rotate-180 w-full max-w-full h-[50%] bg-gradient-to-t from-transparent to-white right-0 -bottom-1'></div>
         </div>

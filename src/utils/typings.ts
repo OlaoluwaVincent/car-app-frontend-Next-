@@ -59,3 +59,10 @@ export type CarImageType = {
   url: string;
   public_id: string;
 }[];
+
+export type Notifications =
+  | {
+      id: string;
+      notificationClip: string;
+    }[]
+  | null;

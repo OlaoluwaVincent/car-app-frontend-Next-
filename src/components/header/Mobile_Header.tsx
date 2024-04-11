@@ -8,11 +8,11 @@ import Logo from '../logo/Logo';
 import { useState } from 'react';
 import { SIDEBAR_MENU } from '@/utils/helperVariables';
 import SidebarLink from '../sidebar link/SidebarLink';
-import { GoSignIn, GoSignOut } from 'react-icons/go';
 import { signOut } from 'next-auth/react';
 import { getClientSideSession } from '@/utils/SessionProvider';
 import { useRouter } from 'next/navigation';
 import UserAvatar from '../Header_Details/avatar';
+import { LogOut, LogIn } from 'lucide-react';
 
 const Mobile_Header = () => {
   const [showSideBar, setshowSideBar] = useState(true);
@@ -47,7 +47,7 @@ const Mobile_Header = () => {
               className='flex bg-warning-700 text-white hover:bg-warning-900 py-2 items-center'
             >
               <span className='mr-2'>
-                <GoSignOut size={30} />
+                <LogOut color='#fff' strokeWidth={1} size={30} />
               </span>
               SignOut
             </button>
@@ -58,7 +58,7 @@ const Mobile_Header = () => {
               className='flex bg-success-700 text-white hover:bg-success-900 py-2 items-center'
             >
               <span className='mr-2'>
-                <GoSignIn size={30} />
+                <LogIn color='#fff' size={30} />
               </span>
               Login
             </button>

@@ -37,7 +37,7 @@ const Header_Details = () => {
             <PopoverTrigger>
               <FaBell className={`${styles['header--details__icon']}`} />
             </PopoverTrigger>
-            <PopoverContent className='z-10'>
+            <PopoverContent>
               <Notification notification={notifications} />
             </PopoverContent>
           </Popover>

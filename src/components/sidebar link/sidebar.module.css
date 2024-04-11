@@ -18,15 +18,17 @@
       border-radius: 10px;
       color: theme('colors.white');
 
-      & > svg {
+      &>svg {
         fill: theme('colors.white');
+        color: theme('colors.dark.400');
       }
     }
 
-    & > svg {
-      fill: theme('colors.gray.400');
-      height: 20px;
-      width: 20px;
+    &>svg {
+      fill: theme('colors.white');
+      color: theme('colors.dark.400');
+      height: 30px;
+      width: 30px;
 
       @media (width < 300px) {
         display: none;
@@ -40,18 +42,20 @@
   border-radius: 10px;
   color: theme('colors.white');
 
-  & svg {
+  /* & svg {
     fill: theme('colors.white');
-  }
+  } */
 }
 
 @media (width > 540.01px) {
   .listitems {
     width: 100%;
   }
+
   .listitem {
     gap: 20px;
   }
+
   .listitem.active {
     padding: 10px;
   }

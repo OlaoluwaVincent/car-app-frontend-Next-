@@ -1,6 +1,7 @@
 import axios, { AxiosError } from 'axios';
 import NextAuth, { NextAuthOptions, Session, User } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { axiosInstance } from '../../../../lib/axios';
 
 type UserResponse = {
   token: string;
@@ -26,13 +27,10 @@ export const authOptions: NextAuthOptions = {
 
       async authorize(credentials) {
         try {
-          const response = await axios.post(
-            'http://localhost:9000/api/auth/login',
-            {
-              email: credentials?.email,
-              password: credentials?.password,
-            }
-          );
+          const response = await axiosInstance.post('auth/login/', {
+            email: credentials?.email,
+            password: credentials?.password,
+          });
           if (response) {
             const user: UserResponse = {
               ...response.data,

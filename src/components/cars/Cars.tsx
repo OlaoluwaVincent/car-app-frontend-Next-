@@ -12,7 +12,7 @@ const Cars = () => {
   });
 
   if (isLoading) {
-    return <LoadingState />;
+    return <p className='animate-pulse font-bold text-2xl'>Loading...</p>;
   }
 
   if (!data) {

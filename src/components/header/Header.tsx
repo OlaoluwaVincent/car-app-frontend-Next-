@@ -14,7 +14,6 @@ const header = async (props: Props) => {
           <Logo />
           <Search />
 
-          {/* Client Component */}
           <Header_Details />
         </div>
       </React.Fragment>

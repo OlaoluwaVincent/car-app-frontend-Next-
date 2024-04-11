@@ -3,7 +3,6 @@
 import styles from './mobil_header.module.css';
 
 import { MdMenu } from 'react-icons/md';
-import Image from 'next/image';
 import Search from '../search_input/Search';
 import Logo from '../logo/Logo';
 import { useState } from 'react';
@@ -13,9 +12,9 @@ import { GoSignIn, GoSignOut } from 'react-icons/go';
 import { signOut } from 'next-auth/react';
 import { getClientSideSession } from '@/utils/SessionProvider';
 import { useRouter } from 'next/navigation';
+import UserAvatar from '../Header_Details/avatar';
 
-type Props = {};
-const Mobile_Header = (props: Props) => {
+const Mobile_Header = () => {
   const [showSideBar, setshowSideBar] = useState(true);
   const { userSession } = getClientSideSession();
   const navigate = useRouter();
@@ -33,9 +32,7 @@ const Mobile_Header = (props: Props) => {
         <div className={styles.bottomHeader}>
           <Search />
 
-          <div className={`${styles.profile} img-container`}>
-            <Image src={'/profile-image copy.png'} alt='App Logo' fill />
-          </div>
+          <UserAvatar />
         </div>
       </div>
 

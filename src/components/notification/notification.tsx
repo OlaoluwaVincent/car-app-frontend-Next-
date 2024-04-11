@@ -1,5 +1,3 @@
-'use client';
-
 import { Notifications } from '@/utils/typings';
 import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -15,15 +13,12 @@ const Notification = ({ notification }: Props) => {
         <Separator className='my-2 bg-dark-600' />
 
         {notification?.map((tag) => (
-          <>
-            <div
-              key={tag.id}
-              className='text-sm truncate hover:bg-warning-200 cursor-pointer'
-            >
+          <div key={tag.id}>
+            <div className='text-sm truncate hover:bg-warning-200 cursor-pointer'>
               {tag.notificationClip}
             </div>
             <Separator className='my-2' />
-          </>
+          </div>
         ))}
       </div>
     </ScrollArea>

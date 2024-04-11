@@ -1,14 +1,8 @@
 import Cars from '@/components/cars/Cars';
+import Hero from '@/components/hero_card/Hero';
 
 type Props = {};
 const CarPage = (props: Props) => {
-  return (
-    <div>
-      {/* Hero section */}
-
-      {/* Cars section */}
-      <Cars />
-    </div>
-  );
+  return <p>Car page</p>;
 };
 export default CarPage;
